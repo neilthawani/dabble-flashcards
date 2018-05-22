@@ -1,0 +1,17 @@
+.countdown-bar-container {
+    clear: both;
+}
+
+.countdown-bar-outer {
+    position: relative;
+    width: 100%;
+    background-color: #eee;
+    height: 10px;
+    border: 1px solid #ddd;
+}
+
+.countdown-bar-inner {
+    position: absolute;
+    background-color: slategray;
+    height: 10px;
+}

@@ -1,0 +1,7 @@
+<div class="lesson-container">
+  {{#each lessons as |lesson|}}
+    {{lesson-card
+        lesson = lesson
+        goToLesson = "goToLesson"}}
+  {{/each}}
+</div>

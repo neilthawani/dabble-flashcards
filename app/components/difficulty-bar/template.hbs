@@ -1,0 +1,11 @@
+<h3 class="text-center">Difficulty</h3>
+
+<div class="difficulty-bar">
+  {{#each ratings as |rating|}}
+    <div class="difficulty-bar-part" {{action "reinsertCard" rating.value}}>
+      <span>
+        {{rating.label}}
+      </span>
+    </div>
+  {{/each}}
+</div>

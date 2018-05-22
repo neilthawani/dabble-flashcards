@@ -1,0 +1,20 @@
+{{#unless activeVocabularyList}}
+  <button class="button button-back" {{action "backToLessonsList"}}>
+    Back to Lessons List
+  </button>
+{{/unless}}
+
+<h4 class="text-center">
+    Lesson {{activeLesson.id}}
+</h4>
+
+{{#unless activeVocabularyList}}
+  {{lesson-options
+      displayVocabularyList = "displayVocabularyList"}}
+{{/unless}}
+
+{{#if activeVocabularyList}}
+  {{lesson-exercise
+      activeVocabularyList = activeVocabularyList
+      backToLesson = "backToLesson"}}
+{{/if}}

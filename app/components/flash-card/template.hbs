@@ -1,0 +1,24 @@
+<div class="flash-card-outer" {{action "toggleShowTranslation"}}>
+  <div class="flash-card-inner-icon">
+    <i class="ii ii-rotate-3d"></i>
+  </div>
+
+  <div class="flash-card-inner-text">
+    {{#if isConversation}}
+      {{flash-card/conversation
+          item = item
+          showTranslation = showTranslation}}
+    {{else}}
+      {{displayWord}}
+    {{/if}}
+
+    {{!-- <div class="flash-card-inner-audio"> --}}
+      {{#if showTranslation}}
+        <audio autoplay>
+          <source src={{textToSpeechURL}} type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      {{/if}}
+    {{!-- </div> --}}
+  </div>
+</div>

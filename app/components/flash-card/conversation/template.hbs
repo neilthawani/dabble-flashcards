@@ -1,0 +1,9 @@
+{{#each item as |line|}}
+  {{#unless showTranslation}}
+    {{line.phrase}}
+    <br />
+  {{else}}
+    {{line.translation}}
+    <br />
+  {{/unless}}
+{{/each}}

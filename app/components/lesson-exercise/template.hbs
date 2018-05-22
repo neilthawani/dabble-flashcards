@@ -1,0 +1,51 @@
+<button class="button button-back" {{action "backToLesson"}}>
+  Back to Lesson
+</button>
+
+<button class="button button-show-all-cards" {{action "toggleShowAllCards"}}>
+  {{#if showAllCards}}
+    Hide Available Cards
+  {{else}}
+    Show All Cards
+  {{/if}}
+</button>
+
+{{#unless isLessonOver}}
+  <div class="countdown-bar-container">
+    <h3 class="text-center">Progress</h3>
+
+    <div class="countdown-bar-outer">
+      <div class="countdown-bar-inner" style={{countdownPercentage}}>
+      </div>
+    </div>
+
+    <h5 class="text-center">{{countdownCount}} / {{countdownTotal}}</h5>
+  </div>
+{{/unless}}
+
+{{#if isLessonOver}}
+  <h4 class="text-center">Score: {{score}} / 100</h4>
+
+  <div class="text-center">
+    <button class="button-default" {{action "repeatLesson"}}>Repeat Lesson</button>
+  </div>
+{{/if}}
+
+{{#unless isLessonOver}}
+  {{#each activeVocabularyList as |item index|}}
+    {{flash-card
+        item = item
+        index = index
+        activeIndex = activeIndex
+        showAllCards = showAllCards}}
+
+    <div class="text-middle">
+      {{difficulty-bar
+          item = item
+          index = index
+          activeIndex = activeIndex
+          showAllCards = showAllCards
+          reinsertCard = "reinsertCard"}}
+    </div>
+  {{/each}}
+{{/unless}}

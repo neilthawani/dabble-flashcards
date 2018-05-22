@@ -1,0 +1,44 @@
+.flash-card-container {
+    height: max-content;
+    margin-bottom: 15px;
+}
+
+.flash-card-container-active {
+    height: 150px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.flash-card-container-conversation {
+    height: max-content;
+    margin-bottom: 25px;
+}
+
+.flash-card-outer {
+    width: 500px;
+    height: auto;
+    background-color: $purple;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+    left: 25%;
+    bottom: 0;
+}
+
+.flash-card-inner-text {
+    font-size: 18px;
+    width: max-content;
+}
+
+// .flash-card-inner-audio {
+//     height: 32px;
+//     margin-top: 10px;
+//     margin-left: 25%;
+// }
+
+.flash-card-inner-icon {
+    float: right;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+}
