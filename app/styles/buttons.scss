@@ -1,0 +1,31 @@
+.button {
+    top: 15px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    background-color: #eee;
+}
+
+.button-default {
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #eee;
+}
+
+.button-left {
+    position: absolute;
+    left: 20%;
+    top: 5%;
+}
+
+.button-right {
+    position: absolute;
+    right: 20%;
+    top: 5%;
+}
+
+.icon-right {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}

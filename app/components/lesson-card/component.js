@@ -13,6 +13,9 @@ export default Ember.Component.extend({
     actions: {
         goToLesson(number) {
             this.sendAction("goToLesson", number);
+        },
+        confirmRemoveLesson(number) {
+            this.sendAction("confirmRemoveLesson", number);
         }
     }
 });

@@ -1,17 +1,9 @@
 @import "variables";
 @import "icons";
 @import "base";
+@import "buttons";
 @import "countdown_bar";
 @import "difficulty_bar";
 @import "flash_card";
+@import "forms";
 @import "lessons";
-
-.button-back {
-    float: left;
-    left: 25%;
-}
-
-.button-show-all-cards {
-    float: right;
-    right: 25%;
-}

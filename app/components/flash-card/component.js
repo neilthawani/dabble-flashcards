@@ -1,5 +1,4 @@
 import Ember from "ember";
-import config from "dabble/config/config";
 
 export default Ember.Component.extend({
     classNameBindings: ["flashCardClass", "isInactiveCard:hidden"],
@@ -39,12 +38,12 @@ export default Ember.Component.extend({
         return this.get("showTranslation") ? this.get("translatedWordOrPhrase") : this.get("untranslatedWordOrPhrase");
     }),
 
-    textToSpeechURL: Ember.computed("displayWord", function() {
-        var displayWord = this.get("displayWord"),
-            url = `${config.BASE_URL}${displayWord}`;
-
-        return url;
-    }),
+    // textToSpeechURL: Ember.computed("displayWord", function() {
+    //     var displayWord = this.get("displayWord"),
+    //         url = `${config.BASE_URL}${displayWord}`;
+    //
+    //     return url;
+    // }),
 
     actions: {
         toggleShowTranslation: function() {

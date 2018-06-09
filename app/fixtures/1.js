@@ -193,6 +193,3 @@ vocabulary.forEach((pair, index) => {
 })
 
 export default weekOne;
-
-// API integration - when they flip the card, google translate's API reads the words out loud?
-// https://cloud.google.com/text-to-speech/docs/reference/rest/

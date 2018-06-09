@@ -1,5 +1,27 @@
-<div class="main-container">
-  <h1 class="text-center">Dabble</h1>
+<h1 class="text-center">Welcome to <span class="welcome-header">Dabble Flash Cards</span></h1>
 
-  {{outlet}}
-</div>
+{{!-- {{#unless isAddingLesson}}
+  <div class="text-center">
+    <button class="button-default {{if lessons "button-right"}}" {{action "addLesson"}}>
+      Add a Lesson
+    </button>
+  </div>
+{{else}} --}}
+  {{add-lesson-form
+      isAddingLesson = isAddingLesson
+      lessonId = lessonId
+      createLesson = "createLesson"}}
+{{!-- {{/unless}} --}}
+
+{{#if canDisplayLessonsList}}
+  <div class="lesson-container">
+    {{#each lessons as |lesson|}}
+      {{lesson-card
+          lesson = lesson
+          goToLesson = "goToLesson"
+          confirmRemoveLesson = "confirmRemoveLesson"}}
+    {{/each}}
+  </div>
+{{/if}}
+
+{{outlet}}

@@ -1,0 +1,46 @@
+.form {
+    width: 50%;
+    margin: auto;
+}
+
+.form-element {
+    margin: 25px 0px 20px 0px;
+    background-color: $pink;
+    padding: 40px;
+}
+
+.form-element-label-inline {
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.form-element-input {
+    display: inline;
+
+    input {
+        font-size: 18px;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+    }
+}
+
+.form-element-file-upload {
+    cursor: pointer;
+}
+
+.form-element-error {
+    width: 50%;
+    background-color: $yellow; // #ffcc55;
+    padding: 15px 10px;
+    text-align: center;
+    margin: 0px auto 25px auto;
+    border: 1px solid black;
+}
+
+.form-element-error-text {
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+}

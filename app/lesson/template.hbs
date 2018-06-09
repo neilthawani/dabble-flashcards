@@ -1,20 +1,25 @@
-{{#unless activeVocabularyList}}
-  <button class="button button-back" {{action "backToLessonsList"}}>
+{{!-- {{#unless activeLesson}} --}}
+  <button class="button button-left" {{action "backToLessonsList"}}>
     Back to Lessons List
   </button>
-{{/unless}}
+{{!-- {{/unless}} --}}
 
 <h4 class="text-center">
     Lesson {{activeLesson.id}}
 </h4>
 
-{{#unless activeVocabularyList}}
-  {{lesson-options
-      displayVocabularyList = "displayVocabularyList"}}
-{{/unless}}
+{{!-- <div class="card-outer" {{action "displayVocabularyList" "dialogues"}}>
+  <div class="card-inner">
+    <div class="card-inner-text">
+      <p>
+        Conversations
+      </p>
+    </div>
+  </div>
+</div> --}}
 
-{{#if activeVocabularyList}}
+{{#if activeLesson}}
   {{lesson-exercise
-      activeVocabularyList = activeVocabularyList
+      activeVocabularyList = activeLesson.cards
       backToLesson = "backToLesson"}}
 {{/if}}

@@ -1,8 +1,10 @@
-<button class="button button-back" {{action "backToLesson"}}>
-  Back to Lesson
-</button>
+{{log "activeVocabularyList" activeVocabularyList}}
 
-<button class="button button-show-all-cards" {{action "toggleShowAllCards"}}>
+{{!-- <button class="button button-left" {{action "backToLesson"}}>
+  Back to Lesson
+</button> --}}
+
+<button class="button button-right" {{action "toggleShowAllCards"}}>
   {{#if showAllCards}}
     Hide Available Cards
   {{else}}

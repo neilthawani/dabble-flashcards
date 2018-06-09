@@ -1,0 +1,63 @@
+{{#unless isAddingLesson}}
+<div class="text-center">
+  <button class="button-default {{if lessons "button-right"}}" {{action "addLesson"}}>
+    Add a Lesson
+  </button>
+</div>
+{{/unless}}
+
+{{#if isAddingLesson}}
+<button class="button button-left" {{action "goToMainPage"}}>Back</button>
+
+<div class="form">
+  <h2 class="text-center">
+    Lesson {{lesson.id}}
+  </h2>
+
+  <div class="form-element">
+    <span class="form-element-label-inline">Lesson Name</span>
+    <div class="form-element-input">
+      {{input
+          type = "text"
+          value = lesson.name}}
+    </div>
+  </div>
+
+  <div class="form-element">
+    <span class="form-element-label-inline">Language (optional)</span>
+    <div class="form-element-input">
+      <select onchange={{action "setLanguage" value="target.value"}}>
+        {{#each languageOptions as |language|}}
+          <option value={{language.value}} selected={{is-equal lesson.language language.value}}>{{language.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-element">
+    <span class="form-element-label-inline">File</span>
+    <div class="form-element-input">
+      <input
+          accept = ".csv,.txt"
+          onchange = {{action "selectFile"}}
+          type = "file"
+          name = ""
+          class = "form-element-file-upload" />
+    </div>
+  </div>
+
+  {{#if fileInfo}}
+    {{#if errorMessage}}
+      <div class="form-element-error">
+        <span class="form-element-error-text">
+            {{errorMessage}}
+        </span>
+      </div>
+    {{/if}}
+  {{/if}}
+
+  <div class="text-center">
+    <button class="button-default" {{action "createLesson"}}>Create Lesson</button>
+  </div>
+</div>
+{{/if}}

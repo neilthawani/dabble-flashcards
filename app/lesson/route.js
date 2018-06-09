@@ -2,17 +2,18 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
     model: function(params) {
+        // console.log("model", params);
         return parseInt(params.lesson_id, 10);
     },
     setupController: function(controller, model) {
-        controller.set("activeLessonIndex", model);
+        controller.set("lessonId", model);
     },
-    deserialize: function(model) {
-        return parseInt(model.lesson_id, 10);
-    },
+    // deserialize: function(model) {
+    //     return parseInt(model.lesson_id, 10);
+    // },
     actions: {
         backToLessonsList() {
-            this.transitionTo("lessons");
+            this.transitionTo("application");
         }
     }
 });

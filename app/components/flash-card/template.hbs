@@ -12,13 +12,13 @@
       {{displayWord}}
     {{/if}}
 
-    {{!-- <div class="flash-card-inner-audio"> --}}
+    <div class="flash-card-inner-audio">
       {{#if showTranslation}}
-        <audio autoplay>
-          <source src={{textToSpeechURL}} type="audio/mpeg">
+        <audio controls>
+          <source src={{item.url}} type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       {{/if}}
-    {{!-- </div> --}}
+    </div>
   </div>
 </div>
